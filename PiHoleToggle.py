@@ -9,7 +9,7 @@ token = "PI_HOLE_API_TOKEN"
 
 print('Current dir: ' + os.getcwd())
 
-r = requests.get(BaseURL)
+r = requests.get(BaseURL + '?status&auth=' + token)
 if r.json()['status'] == 'enabled':
 	action = requests.get(BaseURL + '?disable&auth=' + token)
 	# os.rename(r'PiHole\Disable PiHole.lnk', r'PiHole\Enable PiHole.lnk')
